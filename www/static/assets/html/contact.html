@@ -1,0 +1,43 @@
+<div class="content">
+    <div class="row">
+        <!-- Contact us form -->
+        <div class="col-sm-12">
+            <div class="col-sm-12">
+                  <h3><:CONTACTFORM/></h3>
+                  <p><:CONTACTPAR/></p>
+            </div>
+            <form id="validForm" class="contact_form">
+                <div class="form-group control-group col-sm-6">
+                    <span><i class="fa fa-user"></i></span>
+                    <input class="form-control" type="text" name="name" minlength="2" placeholder="Name *">     
+                </div>
+                <div class="form-group control-group col-sm-6">
+                    <span><i class="fa fa-envelope-o"></i></span>
+                    <input class="form-control" type="email" name="email" placeholder="Email Address *">
+                </div>
+                <div class="form-group control-group col-sm-12">
+                    <span><i class="fa fa-pencil"></i></span>
+                    <textarea class="form-control" type="text" name="message" placeholder="Message *"></textarea>
+                </div>
+                <div class="g-recaptcha form-group control-group col-xs-12" data-sitekey="6LeeuCIeAAAAAKaCcA8ZCTT-eb_1kVMKpoVWo5Gy"></div>
+                <div class="form-hidden-row">
+                    <input type="hidden" name="hidden" value="" />
+                </div>
+                <div class="form-button col-xs-12">
+                    <button type="submit" name="enter" class="btn center-block">
+                        <:CONTACTBTN/>  <i class="fa fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- /Contact us form -->
+    </div>
+
+    <!-- Back to top button -->
+    <:TOTOP/>
+    <!-- /Back to top button -->
+    
+    <!-- Footer -->
+    <:FOOTER/>
+    <!-- /Footer -->
+</div>
