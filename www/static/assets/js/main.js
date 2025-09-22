@@ -50,7 +50,7 @@ jQuery(function () {
                 $('body').addClass('fadeOut animated');
                 setTimeout(function() {
                     window.location.href = url;
-                }, 500);
+                }, 800);
             }
         });
         /*==============================*/
