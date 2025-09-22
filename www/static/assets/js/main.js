@@ -12,6 +12,15 @@ jQuery(function () {
     'use strict';
     $(document).ready(function() {
         $('body, .contact_form, .contact-info, .btn').addClass('fadeIn animated');   
+
+        /**
+         * If the page is showed remove the fadeOut so the back button of the browser works
+         */
+        window.addEventListener('pageshow', function(event) {
+            $('body').removeClass('fadeOut');
+        });
+
+
         /* Create 'exist' selector */
         jQuery.exists = function(selector) {
             return ($(selector).length > 0);
@@ -41,7 +50,7 @@ jQuery(function () {
                 $('body').addClass('fadeOut animated');
                 setTimeout(function() {
                     window.location.href = url;
-                }, 800);
+                }, 500);
             }
         });
         /*==============================*/
