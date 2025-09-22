@@ -1,0 +1,69 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block meta %}
+{% include 'partials/meta.html' %}
+{% endblock %}
+
+{% block header %}
+<link rel="canonical" content="https://www.theartgallerydesign.com/about" />
+{% endblock %}
+
+{% block menu %}
+{% include 'partials/about_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="row">
+        <div class="col-md4 col-sm-4 col-xs-12">
+            <img src="{% static '/assets/images/portrait.jpg' %}" alt="Self portrait. I don't know what I am, I just go about it." />
+            <span class="caption text-muted">Motto.</span>
+        </div>
+        <div class="col-md8 col-sm-8 col-xs-12 nicelinks">
+            <h3>Iskra Ravelo García</h3>
+            <p>
+
+            </p>
+            <h3> </h3>
+            <p>
+
+            </p>
+            <h3> </h3>
+            <p>
+
+            </p>
+            <h3> </h3>
+            <p>
+
+            </p>
+
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <h3>Find me on:</h3>
+                <a href="https://www.facebook.com/iskra.ravelo.garcia" class="btn facebook" title="Facebook" target="_blank">
+                    <i class="fa fa-facebook-official fa-2x"></i>
+                </a>
+                <a href="https://www.instagram.com/artiskra_/" class="btn instagram" title="Instagram" target="_blank">
+                    <i class="fa fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/iskra-ravelo-garcia-92592a228/" class="btn linkedin" title="Linkedin" target="_blank">
+                    <i class="fa fa-linkedin fa-2x"></i>
+                </a>
+            </div>
+            <!-- /Social Icons -->
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-top btn"><i class="fa fa-angle-up fa-2x"></i></a>
+    <!-- /Back to top button -->
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include 'partials/footer.html' %}
+{% endblock %}
+
+{% block script %}{% endblock %}

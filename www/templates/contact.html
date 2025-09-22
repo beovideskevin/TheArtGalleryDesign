@@ -1,0 +1,65 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block meta %}
+{% include 'partials/meta.html' %}
+{% endblock %}
+
+{% block header %}
+<link rel="canonical" content="https://www.theartgallerydesign.com/contact" />
+{% endblock %}
+
+{% block menu %}
+{% include 'partials/contact_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="row">
+        <!-- Contact us form -->
+        <div class="col-sm-12">
+            <div class="col-sm-12">
+                  <h3>Send me a message</h3>
+                  <p>Are you interested in my works? Want to hire me? If you have anything to communicate use the form below. Remember to leave your email and I promise I'll reply.</p>
+            </div>
+            <form id="validForm" class="contact_form">
+                <div class="form-group control-group col-sm-6">
+                    <span><i class="fa fa-user"></i></span>
+                    <input class="form-control" type="text" name="name" minlength="2" placeholder="Name *">     
+                </div>
+                <div class="form-group control-group col-sm-6">
+                    <span><i class="fa fa-envelope-o"></i></span>
+                    <input class="form-control" type="email" name="email" placeholder="Email Address *">
+                </div>
+                <div class="form-group control-group col-sm-12">
+                    <span><i class="fa fa-pencil"></i></span>
+                    <textarea class="form-control" type="text" name="message" placeholder="Message *"></textarea>
+                </div>
+                <div class="g-recaptcha form-group control-group col-xs-12" data-sitekey="6LeeuCIeAAAAAKaCcA8ZCTT-eb_1kVMKpoVWo5Gy"></div>
+                <div class="form-hidden-row">
+                    <input type="hidden" name="hidden" value="" />
+                </div>
+                <div class="form-button col-xs-12">
+                    <button type="submit" name="enter" class="btn center-block">
+                        Send  <i class="fa fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- /Contact us form -->
+    </div>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-top btn"><i class="fa fa-angle-up fa-2x"></i></a>
+    <!-- /Back to top button -->
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include 'partials/footer.html' %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static '/assets/js/jquery.validate.min.js' %}"></script>
+{% endblock %}

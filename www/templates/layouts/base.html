@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<!-- Document Settings -->
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		{% block meta %}{% endblock %}
+
+		{% block header %}{% endblock %}
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,600,700,900,200&display=swap'  type='text/css'>
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="{% static '/assets/css/bootstrap.mine.css' %}">
+
+		<!-- Custom css file -->
+		<link rel="stylesheet" href="{% static '/assets/css/style.css' %}">
+
+		<!-- Plugins -->
+		<link rel="stylesheet" href="{% static '/assets/css/jquery.fullPage.css' %}">
+		<link rel="stylesheet" href="{% static '/assets/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static '/assets/css/animate.css' %}">
+
+		<!-- Dynamic styles -->
+		{% block styles %}{% endblock %}
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4MJGV6BT7"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-Z4MJGV6BT7');
+		</script> -->
+	</head>
+	<body>
+		<!-- Container -->
+		<main class="container">
+
+			<!-- Mobile Menu -->		
+			<div class="mobile-menu-overlay transition">
+				<div class="mobile-menu">
+					<i class="fa fa-times fa-2x"></i>
+				</div>
+				<ul class="mobile-menu-content">
+					<li class="mobile-menu-item">
+						<a href="/">Home</a>
+					</li>
+					<li class="mobile-menu-item">
+						<a href="/recent">Recent</a>
+					</li>
+					<li class="mobile-menu-item">
+						<a href="#" class="dropdown">Work</a>
+						<ul class="mobile-submenu">
+							<li><a href="/painting">Painting</a></li>
+							<li><a href="/illustration">Illustration</a></li>
+							<li><a href="/design">Design</a></li>
+							<li><a href="/photography">Photography</a></li>
+							<li><a href="/installation">Installation</a></li>
+						</ul>
+					</li>
+					<li class="mobile-menu-item">
+						<a href="/about">About Me</a>
+					</li>
+					<li class="mobile-menu-item">
+						<a href="/contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /Mobile Menu -->
+
+			<!-- Header -->
+			
+			{% block menu %}{% endblock %}
+
+			<!-- /Header -->
+
+			<!-- Content -->
+
+			{% block content %}{% endblock %}
+
+			<!-- /Content -->
+				
+			{% block footer %}{% endblock %}
+
+		</main>
+		<!-- /Container -->
+
+	<!-- JS -->
+
+		<!-- jquery-1.11.3.min js -->
+		<script src="{% static '/assets/js/jquery-1.11.3.min.js' %}"></script>
+
+		<!-- Plugins -->
+		<script src="{% static '/assets/js/jquery.fullPage.min.js' %}"></script>
+		<script src="{% static '/assets/js/imagesloaded.min.js' %}"></script>
+		<script src="{% static '/assets/js/website-smooth-scroll.js' %}"></script>
+
+		<!-- Dynamic scripts -->	
+		{% block scripts %}{% endblock %}
+		
+		<!-- Main js -->
+		<script src="{% static '/assets/js/main.js' %}"></script>
+	</body>
+</html>

@@ -403,7 +403,7 @@ nav ul ul ul li {
 /*  05. PARALLAX
 /*-----------------------------------------------------------------------------------*/
 .parallax {
-    background-image: url(../images/parallax1.webp); /* parallax6.webp */
+    background-image: url(../images/parallax.jpg); /* parallax6.webp */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -527,16 +527,22 @@ nav ul ul ul li {
 }
 /*Images home page version 1*/
 #section1 {
-    background-image: url(../images/home/itinerant-large.webp);
+    background-image: url(../images/background/recent.jpg);
 }
 #section2 {
-    background-image: url(../images/home/nudes-large.webp);
+    background-image: url(../images/background/painting.jpg);
 }
 #section3 {
-    background-image: url(../images/home/rolando-large.webp);
+    background-image: url(../images/background/illustration.jpg);
 }
 #section4 {
-    background-image: url(../images/home/vr-large.webp);
+    background-image: url(../images/background/design.jpg);
+}
+#section5 {
+    background-image: url(../images/background/photography.jpg);
+}
+#section6 {
+    background-image: url(../images/background/installation.jpg);
 }
 
 /*Images home page version 2*/
@@ -1248,18 +1254,24 @@ textarea.form-control {
 }
 @media (max-width: 760px) and (orientation : portrait) {
     .parallax {
-        background-image: url(../images/parallax1-small.webp); /* parallax6-small.webp */
+        background-image: url(../images/background/parallax.jpg); /* parallax6-small.webp */
     }
     #section1 {
-        background-image: url(../images/home/itinerant-vertical.webp);
+        background-image: url(../images/background/recent-vertical.jpg);
     }
     #section2 {
-        background-image: url(../images/home/nudes-vertical.webp);
+        background-image: url(../images/background/painting-vertical.jpg);
     }
     #section3 {
-        background-image: url(../images/home/rolando-vertical.webp);
+        background-image: url(../images/background/illustration-vertical.jpg);
     }
     #section4 {
-        background-image: url(../images/home/vr-vertical.webp);
+        background-image: url(../images/background/design-vertical.jpg);
+    }
+    #section5 {
+        background-image: url(../images/background/photography-vertical.jpg);
+    }
+    #section6 {
+        background-image: url(../images/background/installation-vertical.jpg);
     }
 }

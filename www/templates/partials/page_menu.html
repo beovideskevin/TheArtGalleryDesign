@@ -1,0 +1,35 @@
+{% load static %}
+
+<div class="parallax">
+    <div class="darker"></div>
+</div>
+<div class="main-menu">
+    <div id="logo">
+        <a href="/">
+            <img src="{% static '/assets/images/logo.png' %}" alt="logo">
+        </a>
+    </div>
+<!-- Menu -->
+    <nav id="menu" class="col-md-10 col-sm-10">
+        <ul class="hidden-xs">
+            <li><a href="/">Home</a></li>
+            <li><a href="/recent">Recent</a></li>
+            <li><a href="#">Work</a>
+                <!-- Drop Down -->
+                <ul>
+                    <li><a href="/painting">Painting</a></li>
+                    <li><a href="/illustration">Illustration</a></li>
+                    <li><a href="/design">Design</a></li>
+                    <li><a href="/photography">Photography</a></li>
+                    <li><a href="/installation">Installation</a></li>
+                </ul> 
+            </li>
+            <li><a href="/about">About Me</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu col-xs-2 pull-right visible-xs">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>   
+    </nav>
+<!-- /Menu -->
+</div>

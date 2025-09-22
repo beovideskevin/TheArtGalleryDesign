@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block meta %}
+{% include 'partials/meta.html' %}
+{% endblock %}
+
+{% block header %}
+<link rel="canonical" content="https://www.theartgallerydesign.com/404" />
+{% endblock %}
+
+{% block menu %}
+{% include 'partials/404_header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="row">
+        <div class="col-md8 col-sm-8 col-xs-12 nicelinks">
+            <h3>Oops! The page you are looking for is not here.</h3>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-top btn"><i class="fa fa-angle-up fa-2x"></i></a>
+    <!-- /Back to top button -->
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include 'partials/footer.html' %}
+{% endblock %}
+
+{% block script %}{% endblock %}

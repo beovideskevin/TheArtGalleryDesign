@@ -1,2 +1,11 @@
+.idea/
+.env
+.env.local
+.env.development
+.env.test
+.env.production
 .venv
+www/__pycache__/
+www/migrations/__pycache__/
+theartgallerydesign/__pycache__/
 db.sqlite3

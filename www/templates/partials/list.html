@@ -1,0 +1,11 @@
+<div class="masonry gallery row">
+    {% for image in images %}
+    <figure class="grid-item col-md-4 col-sm-4 col-xs-12">
+        <a href="/static/assets/images/portfolio/{{image.url}}" itemprop="contentUrl" data-size="{{ image.width }}x{{ image.height }}">
+            <img src="/static/assets/images/thumbnail/{{image.thumbnail}}" itemprop="thumbnail" alt="{{ image.alt }}" />
+        </a>
+        <figcaption itemprop="caption description">{{ image.description }}</figcaption>
+    </figure>
+    {% empty %}
+    {% endfor %}
+</div>
