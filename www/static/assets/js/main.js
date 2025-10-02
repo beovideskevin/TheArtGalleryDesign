@@ -353,7 +353,12 @@ jQuery(function () {
                         maxlength: "<i class='fa fa-times-circle'></i>The maximum number of characters - 100 ",
                     },
                 },
-                // submitHandler: function (form) {
+                submitHandler: function (form) {
+                    $("#submitContact").prop("disabled", true);
+                    setTimeout(function(){
+                        $('#submitContact').html('send  <i class="fa fa-paper-plane"></i>');
+                    }, 500);
+                    return true;
                 // $.ajax({
                 //     type: "POST",
                 //     url: "/ajax/sendMail",
@@ -373,7 +378,7 @@ jQuery(function () {
                 //     }
                 // });
                 // return false;
-                // }
+                }
             });
         }
     });  
