@@ -31,7 +31,7 @@
                         {% endif %}
                     {% endif %}
             </div>
-            <form id="validForm" class="contact_form" action="/contact">
+            <form id="validForm" class="contact_form" action="/contact" method="POST">
                 {% csrf_token %}
                 <div class="form-group control-group col-sm-6">
                     <span><i class="fa fa-user"></i></span>

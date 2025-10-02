@@ -355,9 +355,7 @@ jQuery(function () {
                 },
                 submitHandler: function (form) {
                     $("#submitContact").prop("disabled", true);
-                    setTimeout(function(){
-                        $('#submitContact').html('send  <i class="fa fa-paper-plane"></i>');
-                    }, 500);
+                    $('#submitContact').html('send  <i class="fa fa-paper-plane"></i>');
                     return true;
                 // $.ajax({
                 //     type: "POST",
