@@ -20,10 +20,19 @@
         <!-- Contact us form -->
         <div class="col-sm-12">
             <div class="col-sm-12">
-                  <h3>Send me a message</h3>
-                  <p>Are you interested in my works? Want to hire me? If you have anything to communicate use the form below. </p>
+                    {% if error %}
+                        <h3>Hubo un error al enviar el correo. Por favor, inténtelo de nuevo.</h3>
+                    {% else %}
+                        {% if sent %}
+                            <h3>Recibí su correo. Le responderé pronto  :)</h3>
+                        {% else %}
+                            <h3>Send me a message</h3>
+                            <p>Are you interested in my works? Want to hire me? If you have anything to communicate use the form below. </p>
+                        {% endif %}
+                    {% endif %}
             </div>
             <form id="validForm" class="contact_form" action="/contact">
+                {% csrf_token %}
                 <div class="form-group control-group col-sm-6">
                     <span><i class="fa fa-user"></i></span>
                     <input class="form-control" type="text" name="name" minlength="2" placeholder="Name *">     
