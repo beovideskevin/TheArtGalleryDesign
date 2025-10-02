@@ -353,27 +353,27 @@ jQuery(function () {
                         maxlength: "<i class='fa fa-times-circle'></i>The maximum number of characters - 100 ",
                     },
                 },
-                submitHandler: function (form) {
-                $.ajax({
-                    type: "POST",
-                    url: "/ajax/sendMail",
-                    data: $(form).serialize(),
-                    success: function (data) {
-                        // console.log("success ", data);
-                        if (data == "Email sent!") {
-                            $('input, textarea').val('');
-                            $('button').html('Email sent <i class="fa fa-envelope-o flip animated"></i>');
-                        }
-                        else {
-                            $('button').html('Email was NOT sent!');
-                        }
-                        setTimeout(function(){
-                            $('button').html('send  <i class="fa fa-paper-plane"></i>');
-                        }, 2000);
-                    }
-                });
-                return false;
-                }
+                // submitHandler: function (form) {
+                // $.ajax({
+                //     type: "POST",
+                //     url: "/ajax/sendMail",
+                //     data: $(form).serialize(),
+                //     success: function (data) {
+                //         // console.log("success ", data);
+                //         if (data == "Email sent!") {
+                //             $('input, textarea').val('');
+                //             $('button').html('Email sent <i class="fa fa-envelope-o flip animated"></i>');
+                //         }
+                //         else {
+                //             $('button').html('Email was NOT sent!');
+                //         }
+                //         setTimeout(function(){
+                //             $('button').html('send  <i class="fa fa-paper-plane"></i>');
+                //         }, 2000);
+                //     }
+                // });
+                // return false;
+                // }
             });
         }
     });  
