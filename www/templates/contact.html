@@ -21,13 +21,15 @@
         <div class="col-sm-12">
             <div class="col-sm-12">
                     {% if error %}
-                        <h3>Hubo un error al enviar el correo. Por favor, inténtelo de nuevo.</h3>
+                        <h3>Error!</h3>
+                        <p>There was an error sending the email. Please, try again.</p>
                     {% else %}
                         {% if sent %}
-                            <h3>Recibí su correo. Le responderé pronto  :)</h3>
+                            <h3>Email received</h3>
+                            <p>Thank you so much for your email. I will respond to you momentarily.</p>
                         {% else %}
                             <h3>Send me a message</h3>
-                            <p>Are you interested in my works? Want to hire me? If you have anything to communicate use the form below. </p>
+                            <p>Are you interested in my works? Want to hire me? </p>
                         {% endif %}
                     {% endif %}
             </div>
@@ -35,15 +37,15 @@
                 {% csrf_token %}
                 <div class="form-group control-group col-sm-6">
                     <span><i class="fa fa-user"></i></span>
-                    <input class="form-control" type="text" name="name" minlength="2" placeholder="Name *">     
+                    <input class="form-control" type="text" name="name" minlength="2" placeholder="Name *" value="{% if name %}{{name}}{% endif %}" >     
                 </div>
                 <div class="form-group control-group col-sm-6">
                     <span><i class="fa fa-envelope-o"></i></span>
-                    <input class="form-control" type="email" name="email" placeholder="Email Address *">
+                    <input class="form-control" type="email" name="email" placeholder="Email Address *" value="{% if email %}{{email}}{% endif %}">
                 </div>
                 <div class="form-group control-group col-sm-12">
                     <span><i class="fa fa-pencil"></i></span>
-                    <textarea class="form-control" type="text" name="message" placeholder="Message *"></textarea>
+                    <textarea class="form-control" type="text" name="message" placeholder="Message *">{% if message %}{{message}}{% endif %}</textarea>
                 </div>
                 <div class="form-group control-group col-sm-12">
                     <input type="hidden" name="nothing" />
