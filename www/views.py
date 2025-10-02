@@ -9,12 +9,15 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 def home(request):
-    return render(request, "home.html", {})
+    return render(request, "home.html", {
+        "keywords": "art portfolio, contemporary painting, colorful illustration, fine art prints, modern artist",
+    })
 
 def painting(request):
     category = Category.objects.get(name="painting")
     images = Artwork.objects.filter(category=category).order_by('index')
     return render(request, "gallery.html", {
+        "keywords": "contemporary art, original paintings, abstract painting, colorful artwork",
         "images": images,
         "active": "painting",
     })
@@ -23,6 +26,7 @@ def illustration(request):
     category = Category.objects.get(name="illustration")
     images = Artwork.objects.filter(category=category).order_by('index')
     return render(request, "gallery.html", {
+        "keywords": "illustration portfolio, custom illustration, book illustration, digital illustration",
         "images": images,
         "active": "illustration",
     })
@@ -31,6 +35,7 @@ def design(request):
     category = Category.objects.get(name="design")
     images = Artwork.objects.filter(category=category).order_by('index')
     return render(request, "gallery.html", {
+        "keywords": "graphic design, creative designer, branding and design",
         "images": images,
         "active": "design",
     })
@@ -39,6 +44,7 @@ def photography(request):
     category = Category.objects.get(name="photography")
     images = Artwork.objects.filter(category=category).order_by('index')
     return render(request, "gallery.html", {
+        "keywords": "fine art photography, creative photography, photo art prints",
         "images": images,
         "active": "photography",
     })
@@ -47,6 +53,7 @@ def installation(request):
     category = Category.objects.get(name="installation")
     images = Artwork.objects.filter(category=category).order_by('index')
     return render(request, "gallery.html", {
+        "keywords": "art installations, contemporary installations, site-specific art",
         "images": images,
         "active": "installation",
     })
@@ -55,6 +62,7 @@ def recent(request):
     category = Category.objects.get(name="recent")
     images = Artwork.objects.filter(category=category).order_by('index')
     return render(request, "gallery.html", {
+        "keywords": "new artworks, latest collection, art updates, recent paintings, creative projects",
         "images": images,
         "active": "recent",
     })
@@ -68,12 +76,15 @@ def gallery(request, cat):
 
     images = Artwork.objects.filter(category=category).order_by('index')
     return render(request, "gallery.html", {
+        "keywords": "art portfolio, contemporary painting, colorful illustration, fine art prints, modern artist",
         "images": images,
         "active": "photography",
     })
 
 def about(request):
-    return render(request, "about.html", {})
+    return render(request, "about.html", {
+        "keywords": "artist portfolio, creative visual artist, contemporary artist",
+    })
 
 def contact(request):
     sent = False
@@ -89,6 +100,7 @@ def contact(request):
         if (name == "" or email == "" or is_valid_email(email) is False or message == ""
                 or turnstile_response == '' or nothing != ""):
             return render(request, "contact.html", {
+                "keywords": "art portfolio, contemporary painting, colorful illustration, fine art prints, modern artistt",
                 "error": True,
                 "name": name,
                 "email": email,
@@ -97,6 +109,7 @@ def contact(request):
 
         if validate_turnstile(secret, turnstile_response, remote_ip) is False:
             return render(request, "contact.html", {
+                "keywords": "art portfolio, contemporary painting, colorful illustration, fine art prints, modern artist",
                 "error": True,
                 "name": name,
                 "email": email,
@@ -117,5 +130,6 @@ def contact(request):
         )
 
     return render(request, "contact.html", {
+        "keywords": "art portfolio, contemporary painting, colorful illustration, fine art prints, modern artist",
         "sent": sent
     })

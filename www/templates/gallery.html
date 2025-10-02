@@ -12,6 +12,7 @@
 
 {% block header %}
 <link rel="canonical" content="https://www.theartgallerydesign.com/gallery" />
+<meta name="keywords" content="{{ keywords }}" />
 {% endblock %}
 
 {% block menu %}
@@ -82,10 +83,6 @@
     <!-- /Back to top button -->
 
 </div>
-{% endblock %}
-
-{% block footer %}
-{% include 'partials/footer.html' %}
 {% endblock %}
 
 {% block scripts %}

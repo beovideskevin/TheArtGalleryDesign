@@ -7,6 +7,7 @@
 
 {% block header %}
 <link rel="canonical" content="https://www.theartgallerydesign.com/contact" />
+<meta name="keywords" content="{{ keywords }}" />
 {% endblock %}
 
 {% block menu %}
@@ -20,7 +21,7 @@
         <div class="col-sm-12">
             <div class="col-sm-12">
                   <h3>Send me a message</h3>
-                  <p>Are you interested in my works? Want to hire me? If you have anything to communicate use the form below. Remember to leave your email and I promise I'll reply.</p>
+                  <p>Are you interested in my works? Want to hire me? If you have anything to communicate use the form below. </p>
             </div>
             <form id="validForm" class="contact_form">
                 <div class="form-group control-group col-sm-6">
@@ -39,6 +40,10 @@
                 <div class="form-hidden-row">
                     <input type="hidden" name="hidden" value="" />
                 </div>
+                <div class="form-group">
+                    <input type="hidden" name="nothing"  />
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAB4acPG05U2F5lbB"></div>
+                </div>
                 <div class="form-button col-xs-12">
                     <button type="submit" name="enter" class="btn center-block">
                         Send  <i class="fa fa-paper-plane"></i>
@@ -56,10 +61,10 @@
 </div>
 {% endblock %}
 
-{% block footer %}
-{% include 'partials/footer.html' %}
-{% endblock %}
-
 {% block scripts %}
 <script src="{% static '/assets/js/jquery.validate.min.js' %}"></script>
+
+<!-- Cloudflare -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+
 {% endblock %}
