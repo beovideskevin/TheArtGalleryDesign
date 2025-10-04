@@ -23,7 +23,7 @@ Author:     madsparrow
     
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     text: #666
-    hover: #ef4138
+    hover: #dc2057
     
 -------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
@@ -91,7 +91,7 @@ blockquote {
             transition: all .1s ease-in-out;
 }
 .fa-heart:hover{
-    color: #ef4138;
+    color: #dc2057;
 }
 .container {
     width: 100%;
@@ -158,16 +158,16 @@ blockquote {
             transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
 .btn::before {
-    border: .2rem solid #ef4138;
+    border: .2rem solid #dc2057;
     opacity: 0;
     -webkit-transform: scale3d(1.2, 1.2, 1);
             transform: scale3d(1.2, 1.2, 1);
 }
 .btn::after {
-    background: #ef4138;
+    background: #dc2057;
 }
 .btn:hover {
-    color: #ef4138;
+    color: #dc2057;
 }
 .btn:hover::before {
     opacity: 1;
@@ -273,7 +273,7 @@ nav a {
     text-shadow: 0 .1rem .1rem rgba(0, 0, 0, 0.5);
 }
 nav > a:hover {
-    color: #ef4138;
+    color: #dc2057;
     text-shadow: none;
 }
 /* Hide Dropdowns by Default */
@@ -310,7 +310,7 @@ nav ul ul li a {
     padding-left: 2rem;
 }
 nav ul ul li a:hover {
-    color: #ef4138 !important;
+    color: #dc2057 !important;
 }
 /* Second, Third and more Tiers */
 nav ul ul ul li {
@@ -353,7 +353,7 @@ nav ul ul ul li {
     background: transparent;
 }
 .menu-active {
-    color: #ef4138;
+    color: #dc2057;
 }
 /*-----------------------------------------------------------------------------------*/
 /*  4. MOBILE MENU NAVIGATION
@@ -369,7 +369,7 @@ nav ul ul ul li {
     bottom: 0;
     z-index: 5;
     text-align: right;
-    background: #ef4138;
+    background: #dc2057;
     overflow: auto;
     padding: 2.4rem 2.6rem;
     opacity: 0;
@@ -403,7 +403,7 @@ nav ul ul ul li {
 /*  05. PARALLAX
 /*-----------------------------------------------------------------------------------*/
 .parallax {
-    background-image: url(../images/parallax.jpg); /* parallax6.webp */
+    background-image: url(../images/banner-a.jpg); /* parallax6.webp */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -601,7 +601,7 @@ nav ul ul ul li {
     margin: 0 0 0 9rem;
     width: 15rem;
     text-align: right;
-    border-bottom: solid .2rem #ef4138;
+    border-bottom: solid .2rem #dc2057;
 }
 .align-left p:after{
     width: 100%;
@@ -636,7 +636,7 @@ nav ul ul ul li {
     float: right;
     opacity: 1;
     text-align: right;
-    border-bottom: solid .2rem #ef4138;
+    border-bottom: solid .2rem #dc2057;
 }
 .align-right p {
     opacity: 0;
@@ -738,7 +738,7 @@ nav ul ul ul li {
     margin-top: 31rem;
 }
 .blog-item a {
-    color: #ef4138;
+    color: #dc2057;
 }
 .blog-description {
     height: 26.4rem;
@@ -801,13 +801,13 @@ nav ul ul ul li {
     margin-right: -1rem;
 }
 .blog-item:hover .post-info{
-    border-color: #ef4138;
+    border-color: #dc2057;
 }
 /*-----------------------------------------------------------------------------------*/
 /*  08. BLOG POST PAGE
 /*-----------------------------------------------------------------------------------*/
 .blog-post-meta{
-    color: #ef4138;
+    color: #dc2057;
 }
 .caption {
     text-align: center;
@@ -858,7 +858,7 @@ ul.comment-list{
     display: inline-block;
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
-    color: #ef4138;
+    color: #dc2057;
 }
 .post-comments .name{
     margin-bottom: 1rem;
@@ -965,7 +965,7 @@ ul.comment-list{
     opacity: .7;
 }
 .form-group label.error{
-    color: #ef4138;
+    color: #dc2057;
     font-size: 85%;
 }
 .contact_form h3,
@@ -1234,7 +1234,7 @@ textarea.form-control {
 /*  13. ADDED BY ME
 /*-----------------------------------------------------------------------------------*/
 .nicelinks a {
-    color: #ef4138;
+    color: #dc2057;
     text-decoration: underline;
 }
 .nicelinks ul {
@@ -1254,7 +1254,7 @@ textarea.form-control {
 }
 @media (max-width: 760px) and (orientation : portrait) {
     .parallax {
-        background-image: url(../images/background/parallax.jpg); /* parallax6-small.webp */
+        background-image: url(../images/banner-b.jpg); /* parallax6-small.webp */
     }
     #section1 {
         background-image: url(../images/background/recent-vertical.jpg);
