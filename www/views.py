@@ -92,10 +92,10 @@ def contact(request):
         secret = settings.TURNSTILE_SECRET
         turnstile_response = request.POST.get("cf-turnstile-response", "")
         remote_ip = request.META.get('HTTP_CF_CONNECTING_IP')
-        name = request.POST["name"]
-        email = request.POST["email"]
-        message = request.POST["message"]
-        nothing = request.POST["nothing"]
+        name = strip_tags(escape(request.POST["name"]))
+        email = strip_tags(escape(request.POST["email"]))
+        message = strip_tags(escape(request.POST["message"]))
+        nothing = strip_tags(escape(request.POST["nothing"]))
         sent = False
         error = False
 
@@ -105,9 +105,6 @@ def contact(request):
             url = reverse('contact') + f"?name={name}&email={email}&message={message}&error={error}&sent={sent}"
             return redirect(url)
 
-        name = strip_tags(escape(name))
-        message = strip_tags(escape(message))
-        email = strip_tags(escape(email))
         send_mail(
             "Mensaje de TheArtGalleryDesign.com",
             f"{message}\nNombre: {name}\nCorreo: {email}",
@@ -116,7 +113,7 @@ def contact(request):
             fail_silently=True,
         )
         sent = True
-        url = reverse('contact') + f"?name={name}&email={email}&message={message}&error={error}&sent={sent}"
+        url = reverse('contact') + f"?sent={sent}"
         return redirect(url)
 
     name = request.GET.get('name', "") 
