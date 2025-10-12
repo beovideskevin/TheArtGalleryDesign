@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.core.mail import send_mail
 from django.conf import settings
 from django.utils.html import escape, strip_tags
@@ -87,7 +88,6 @@ def about(request):
     })
 
 def contact(request):
-    sent = False
     if request.method == "POST":
         secret = settings.TURNSTILE_SECRET
         turnstile_response = request.POST.get("cf-turnstile-response", "")
@@ -96,31 +96,18 @@ def contact(request):
         email = request.POST["email"]
         message = request.POST["message"]
         nothing = request.POST["nothing"]
+        sent = False
+        error = False
 
-        if (name == "" or email == "" or is_valid_email(email) is False or message == ""
-                or turnstile_response == '' or nothing != ""):
-            return render(request, "contact.html", {
-                "keywords": "art portfolio, contemporary painting, colorful illustration, fine art prints, modern artistt",
-                "error": True,
-                "name": name,
-                "email": email,
-                "message": message
-            })
-
-        if validate_turnstile(secret, turnstile_response, remote_ip) is False:
-            return render(request, "contact.html", {
-                "keywords": "art portfolio, contemporary painting, colorful illustration, fine art prints, modern artist",
-                "error": True,
-                "name": name,
-                "email": email,
-                "message": message
-            })
+        if (name == "" or message == "" or email == "" or is_valid_email(email) is False or nothing != "" 
+                or turnstile_response == '' or validate_turnstile(secret, turnstile_response, remote_ip) is False):
+            error = True
+            url = reverse('contact') + f"?name={name}&email={email}&message={message}&error={error}&sent={sent}"
+            return redirect(url)
 
         name = strip_tags(escape(name))
         message = strip_tags(escape(message))
         email = strip_tags(escape(email))
-
-        sent = True
         send_mail(
             "Mensaje de TheArtGalleryDesign.com",
             f"{message}\nNombre: {name}\nCorreo: {email}",
@@ -128,8 +115,21 @@ def contact(request):
             [settings.ADMIN_USER_EMAIL],
             fail_silently=True,
         )
+        sent = True
+        url = reverse('contact') + f"?name={name}&email={email}&message={message}&error={error}&sent={sent}"
+        return redirect(url)
+
+    name = request.GET.get('name', "") 
+    message = request.GET.get('message', "")
+    email = request.GET.get('email', "")
+    sent = request.GET.get('sent', False)
+    error = request.GET.get('error', False)
 
     return render(request, "contact.html", {
         "keywords": "art portfolio, contemporary painting, colorful illustration, fine art prints, modern artist",
+        "error": error,
+        "name": name,
+        "email": email,
+        "message": message,
         "sent": sent
     })

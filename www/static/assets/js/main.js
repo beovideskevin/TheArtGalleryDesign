@@ -354,7 +354,7 @@ jQuery(function () {
                     },
                 },
                 submitHandler: function (form) {
-                    $("#submitContact").prop("disabled", true);
+                    // $("#submitContact").prop("disabled", true);
                     $('#submitContact').html('Email sent <i class="fa fa-envelope-o flip animated"></i>');
                     return true;
                 // $.ajax({
